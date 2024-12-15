@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Buraleh & Co</title>
+    <style>
+        /* Global Reset */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* Root Variables for Color Scheme */
+        :root {
+            --bg-light: #f5f5f5;
+            --bg-dark: #333;
+            --primary-color: #8e44ad; /* Deep Purple */
+            --secondary-color: #9b59b6; /* Lighter Purple */
+            --highlight-color: #f1c40f; /* Vibrant Yellow */
+            --cta-bg: linear-gradient(135deg, #9b59b6, #8e44ad); /* Gradient for CTA */
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-dark: rgba(0, 0, 0, 0.25);
+        }
+
+        /* Header */
+        header {
+            background: var(--cta-bg);
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo a {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: #fff;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background: linear-gradient(135deg, #b39ddb, #d1c4e9);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* FAQ Section */
+        .section {
+            padding: 60px 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px var(--shadow-light);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            color: var(--highlight-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--cta-bg);
+            padding: 50px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        footer .footer-content {
+            margin-top: 30px;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        footer .footer-content p {
+            margin: 10px 0;
+        }
+
+        footer .footer-content a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        footer .footer-content a:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">Buraleh & Co</a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section">
+        <h1>Frequently Asked Questions (FAQ)</h1>
+        
+        <h2>Q1: What services does Buraleh & Co offer?</h2>
+        <p>A1: We specialize in premium car marketing through advanced geolocation-based advertising and SEO strategies. Our services are designed to help dealerships and sellers reach the right buyers faster.</p>
+
+        <h2>Q2: How can I sign up for your services?</h2>
+        <p>A2: You can sign up by contacting us through our Contact form on the website or by emailing us directly at <a href="mailto:Buralehandco@gmail.com">Buralehandco@gmail.com</a>. We’ll guide you through the process and help you choose the right plan.</p>
+
+        <h2>Q3: What payment methods do you accept?</h2>
+        <p>A3: We accept payments via e-transfer to our business account at <a href="mailto:Buralehandco@gmail.com">Buralehandco@gmail.com</a>.</p>
+
+        <h2>Q4: How can I cancel my subscription?</h2>
+        <p>A4: To cancel your subscription or inquire about any changes to your services, please contact us at <a href="mailto:Buralehandco@gmail.com">Buralehandco@gmail.com</a>.</p>
+
+        <h2>Q5: How does your geolocation-based marketing work?</h2>
+        <p>A5: Our system uses geolocation data to target potential buyers within specific regions. This allows us to show your car listings to those most likely to be interested in them.</p>
+
+        <h2>Q6: How do I get in touch with customer support?</h2>
+        <p>A6: For any customer inquiries or support requests, please email us at <a href="mailto:Buralehandco@gmail.com">Buralehandco@gmail.com</a>.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Buraleh & Co. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
