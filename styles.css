@@ -149,20 +149,23 @@ nav ul li a:hover {
 
 /* Geolocation Section */
 #geolocation {
+    position: relative; /* Make the section the reference point for the absolute positioning */
     background: var(--cta-bg);
     color: #fff;
     padding: 60px 20px;
     text-align: center;
-    position: relative; /* Allows positioning of child elements */
 }
 
-/* Rotating Earth Animation */
+/* Earth Animation */
 #earth {
-    width: 300px;
-    height: 300px;
+    position: ; /* Position the Earth div absolutely within the #geolocation section */
+    top: 100%; /* Center the Earth vertically */
+    left: 100%; /* Center the Earth horizontally */
+    width: 200px;
+    height: 200px;
     background: url(https://web.archive.org/web/20150807125159if_/http://www.noirextreme.com/digital/Earth-Color4096.jpg);
     border-radius: 50%;
-    background-size: 610px;
+    background-size: 510px;
     box-shadow: inset 8px 36px 80px 36px rgb(0, 0, 0), inset -6px 0 12px 4px rgba(255, 255, 255, 0.3);
     animation-name: rotate;
     animation-duration: 12s;
@@ -172,29 +175,26 @@ nav ul li a:hover {
     -webkit-animation-duration: 12s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
-    position: absolute; /* Position the Earth in the background */
-    top: 50%; /* Centers the Earth vertically */
-    left: 50%; /* Centers the Earth horizontally */
-    transform: translate(-50%, -50%); /* Centers it more accurately */
+    z-index: 0; /* Make sure Earth stays behind the text */
 }
 
-/* Keyframes for rotation */
+/* Keyframes for rotating Earth */
 @keyframes rotate {
-  from {
-    background-position: 0px 0px;
-  }
-  to {
-    background-position: 610px 0px;
-  }
+    from {
+        background-position: 0px 0px;
+    }
+    to {
+        background-position: 610px 0px;
+    }
 }
 
 @-webkit-keyframes rotate {
-  from {
-    background-position: 0px 0px;
-  }
-  to {
-    background-position: 610px 0px;
-  }
+    from {
+        background-position: 0px 0px;
+    }
+    to {
+        background-position: 610px 0px;
+    }
 }
 
 /* Pricing Section Styles */
