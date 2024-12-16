@@ -153,6 +153,48 @@ nav ul li a:hover {
     color: #fff;
     padding: 60px 20px;
     text-align: center;
+    position: relative; /* Allows positioning of child elements */
+}
+
+/* Rotating Earth Animation */
+#earth {
+    width: 300px;
+    height: 300px;
+    background: url(https://web.archive.org/web/20150807125159if_/http://www.noirextreme.com/digital/Earth-Color4096.jpg);
+    border-radius: 50%;
+    background-size: 610px;
+    box-shadow: inset 8px 36px 80px 36px rgb(0, 0, 0), inset -6px 0 12px 4px rgba(255, 255, 255, 0.3);
+    animation-name: rotate;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 12s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    position: absolute; /* Position the Earth in the background */
+    top: 50%; /* Centers the Earth vertically */
+    left: 50%; /* Centers the Earth horizontally */
+    transform: translate(-50%, -50%); /* Centers it more accurately */
+}
+
+/* Keyframes for rotation */
+@keyframes rotate {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 610px 0px;
+  }
+}
+
+@-webkit-keyframes rotate {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 610px 0px;
+  }
 }
 
 /* Pricing Section Styles */
