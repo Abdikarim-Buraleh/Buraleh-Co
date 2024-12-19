@@ -158,9 +158,9 @@ nav ul li a:hover {
 
 /* Earth Animation */
 #earth {
-    position: ; /* Position the Earth div absolutely within the #geolocation section */
-    top: 100%; /* Center the Earth vertically */
-    left: 100%; /* Center the Earth horizontally */
+    position: absolute; /* Position the Earth div absolutely within the #geolocation section */
+    top: 50%; /* Center the Earth vertically (50% of the parent height) */
+    left: 50%; /* Center the Earth horizontally (50% of the parent width) */
     width: 200px;
     height: 200px;
     background: url(https://web.archive.org/web/20150807125159if_/http://www.noirextreme.com/digital/Earth-Color4096.jpg);
@@ -176,6 +176,7 @@ nav ul li a:hover {
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
     z-index: 0; /* Make sure Earth stays behind the text */
+    transform: translate(-50%, -50%); /* Offset by 50% of its own width and height to truly center it */
 }
 
 /* Keyframes for rotating Earth */
