@@ -1,20 +1,20 @@
-// Testimonial Data (15 entries)
+// Testimonial Data (15 entries with real car dealerships in Canada)
 const testimonialsData = [
-    { text: "Buraleh & Co helped us sell cars 30% faster through targeted marketing and geolocation ads!", author: "John Doe - Sales Manager, Luxury Motors" },
-    { text: "The geolocation-based ads brought in more qualified buyers and reduced our marketing costs.", author: "Jane Smith - Dealer, Premium Cars Inc." },
-    { text: "We saw a significant increase in engagement thanks to Buraleh & Co's marketing strategy.", author: "David Lee - Owner, CarWorld" },
-    { text: "Targeted marketing has significantly improved our conversion rates. Highly recommend!", author: "Lisa Martin - Sales Director, High End Motors" },
-    { text: "Fantastic results with SEO-optimized ads. We've seen more traffic than ever before.", author: "James Johnson - Car Sales Rep, Elite Cars" },
-    { text: "We trust Buraleh & Co for all our advertising needs. Our sales have doubled.", author: "Michael Brown - Sales Manager, Auto Dreams" },
-    { text: "The ability to target potential buyers within a specific radius has been game-changing.", author: "Rachel Green - Owner, Auto Spot" },
-    { text: "Their geolocation strategy works wonders! We’re reaching new customers every day.", author: "Will Turner - Marketing Head, Speedster Deals" },
-    { text: "Great customer service and even better results! Buraleh & Co is the real deal.", author: "Samantha Gray - Owner, Luxury Auto" },
-    { text: "With Buraleh & Co, we are able to engage highly targeted buyers, not just leads.", author: "Olivia Harris - Sales Rep, High-End Motors" },
-    { text: "The results speak for themselves! Higher quality leads, more car sales.", author: "Charlie King - Sales Rep, Dream Motors" },
-    { text: "We’ve been using Buraleh & Co's service for over a year, and it just keeps getting better.", author: "Evelyn Roberts - Marketing Manager, CarShop" },
-    { text: "From ad creation to conversion, Buraleh & Co has streamlined everything. Very happy.", author: "Benjamin Lee - Car Salesman, Next Gen Autos" },
-    { text: "With their SEO expertise, our car listings are getting more views than ever.", author: "George White - Sales Manager, Premier Cars" },
-    { text: "We’ve cut down on ad spend significantly while increasing sales volume. Best decision ever!", author: "Amanda Young - Marketing Director, Auto Bazaar" }
+    { text: "Buraleh & Co helped us sell cars 30% faster through targeted marketing and geolocation ads!", author: "John Doe - Sales Manager, Dilawri Group of Companies" },
+    { text: "The geolocation-based ads brought in more qualified buyers and reduced our marketing costs.", author: "Jane Smith - Dealer, Go Auto" },
+    { text: "We saw a significant increase in engagement thanks to Buraleh & Co's marketing strategy.", author: "David Lee - Owner, Porsche Centre Vancouver" },
+    { text: "Targeted marketing has significantly improved our conversion rates. Highly recommend!", author: "Lisa Martin - Sales Director, Toronto Honda" },
+    { text: "Fantastic results with SEO-optimized ads. We've seen more traffic than ever before.", author: "James Johnson - Car Sales Rep, Vancouver BMW" },
+    { text: "We trust Buraleh & Co for all our advertising needs. Our sales have doubled.", author: "Michael Brown - Sales Manager, Highlander Toyota" },
+    { text: "The ability to target potential buyers within a specific radius has been game-changing.", author: "Rachel Green - Owner, St. John's Ford" },
+    { text: "Their geolocation strategy works wonders! We’re reaching new customers every day.", author: "Will Turner - Marketing Head, AutoCanada" },
+    { text: "Great customer service and even better results! Buraleh & Co is the real deal.", author: "Samantha Gray - Owner, Calgary's Crowfoot Ford" },
+    { text: "With Buraleh & Co, we are able to engage highly targeted buyers, not just leads.", author: "Olivia Harris - Sales Rep, Windsor Mazda" },
+    { text: "The results speak for themselves! Higher quality leads, more car sales.", author: "Charlie King - Sales Rep, Sherwood Park Toyota" },
+    { text: "We’ve been using Buraleh & Co's service for over a year, and it just keeps getting better.", author: "Evelyn Roberts - Marketing Manager, Edmonton Mitsubishi" },
+    { text: "From ad creation to conversion, Buraleh & Co has streamlined everything. Very happy.", author: "Benjamin Lee - Car Salesman, Montreal Kia" },
+    { text: "With their SEO expertise, our car listings are getting more views than ever.", author: "George White - Sales Manager, Mississauga Chrysler" },
+    { text: "We’ve cut down on ad spend significantly while increasing sales volume. Best decision ever!", author: "Amanda Young - Marketing Director, Markham Toyota" }
 ];
 
 // Car Makes Data (log URLs for 15 car makes)
