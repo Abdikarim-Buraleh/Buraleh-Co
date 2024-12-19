@@ -25,21 +25,42 @@
     </header>
 
   <div id="video-container" style="position: relative; width: 100%; height: 100vh;">
+    <div id="video-container" style="position: relative; width: 100%; height: 100vh;">
     <!-- YouTube Video -->
     <iframe 
+        id="bg-video"
         src="https://www.youtube.com/embed/t9-cMiEDNyk?autoplay=1&mute=1&loop=1&playlist=t9-cMiEDNyk&start=20&controls=0&modestbranding=1&rel=0" 
         frameborder="0" 
         allow="autoplay; encrypted-media" 
         allowfullscreen 
-        id="bg-video"
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
     </iframe>
-    
+
     <!-- Transparent Overlay to block mouse interaction -->
     <div id="video-overlay" 
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; z-index: 2;">
     </div>
-  </div>
+</div>
+
+<!-- JavaScript to control overlay (removes on click) -->
+<script>
+    // Ensuring the overlay is visible when the page loads
+    window.onload = function() {
+        // Make sure the overlay is visible on page load
+        document.getElementById('video-overlay').style.display = 'block';
+    }
+
+    // Optional: Remove overlay on user click (if they want to interact with the video)
+    document.getElementById('video-overlay').addEventListener('click', function() {
+        this.style.display = 'none'; // Hide the overlay when clicked
+    });
+
+    // Ensuring the video doesn't refresh on page reload but starts automatically
+    var iframe = document.getElementById('bg-video');
+    var src = iframe.src;
+    iframe.src = ''; // Temporarily remove the video
+    iframe.src = src; // Reload the video to maintain autoplay functionality
+</script>
 
     <!-- About Section -->
     <section id="about" class="section">
