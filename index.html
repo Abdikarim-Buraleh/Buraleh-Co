@@ -42,26 +42,6 @@
     </div>
 </div>
 
-<!-- JavaScript to control overlay (removes on click) -->
-<script>
-    // Ensuring the overlay is visible when the page loads
-    window.onload = function() {
-        // Make sure the overlay is visible on page load
-        document.getElementById('video-overlay').style.display = 'block';
-    }
-
-    // Optional: Remove overlay on user click (if they want to interact with the video)
-    document.getElementById('video-overlay').addEventListener('click', function() {
-        this.style.display = 'none'; // Hide the overlay when clicked
-    });
-
-    // Ensuring the video doesn't refresh on page reload but starts automatically
-    var iframe = document.getElementById('bg-video');
-    var src = iframe.src;
-    iframe.src = ''; // Temporarily remove the video
-    iframe.src = src; // Reload the video to maintain autoplay functionality
-</script>
-
     <!-- About Section -->
     <section id="about" class="section">
         <h1>Buraleh & Co</h1>
@@ -284,5 +264,24 @@
             addCarouselHoverListeners('.car-makes-carousel-container', 'carMakes');
         };
     </script>
+	  <!-- JavaScript to control overlay (removes on click) -->
+<script>
+    // Ensuring the overlay is visible when the page loads
+    window.onload = function() {
+        // Make sure the overlay is visible on page load
+        document.getElementById('video-overlay').style.display = 'block';
+    }
+
+    // Optional: Remove overlay on user click (if they want to interact with the video)
+    document.getElementById('video-overlay').addEventListener('click', function() {
+        this.style.display = 'none'; // Hide the overlay when clicked
+    });
+
+    // Ensuring the video doesn't refresh on page reload but starts automatically
+    var iframe = document.getElementById('bg-video');
+    var src = iframe.src;
+    iframe.src = ''; // Temporarily remove the video
+    iframe.src = src; // Reload the video to maintain autoplay functionality
+</script>
 </body>
 </html>
