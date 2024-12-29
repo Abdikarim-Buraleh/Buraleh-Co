@@ -26,6 +26,7 @@
 
     <!-- Video Section -->
     <div id="video-container" style="position: relative; width: 100%; height: 100vh;">
+        <!-- YouTube Video -->
         <iframe 
             id="bg-video"
             src="https://www.youtube.com/embed/t9-cMiEDNyk?autoplay=1&mute=1&loop=1&playlist=t9-cMiEDNyk&start=30&controls=0&modestbranding=1&rel=0" 
@@ -34,6 +35,8 @@
             allowfullscreen 
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
         </iframe>
+
+        <!-- Transparent Overlay to block mouse interaction -->
         <div id="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; z-index: 2;"></div>
     </div>
 
@@ -43,16 +46,15 @@
         <p>Revolutionizing the way premium cars are marketed and sold in Canada and the USA. As North America's #1 Premium Car Marketing Agency, we leverage cutting-edge geolocation and SEO strategies to connect your premium cars with buyers across both nations.</p>
     </section>
 
- <!-- Testimonials Section -->
-<section id="testimonials" class="section">
-    <h1>What Our Clients in Canada and the USA are Saying</h1>
-    <div class="testimonials-carousel-container">
-        <div class="testimonials-slider">
-            <!-- Testimonials will be injected here dynamically -->
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <h1>What Our Clients in Canada and the USA are Saying</h1>
+        <div class="testimonials-carousel-container">
+            <div class="testimonials-slider">
+              
+            </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Geolocation Section -->
     <section id="geolocation" class="section">
@@ -64,7 +66,9 @@
     <section id="pricing" class="section">
         <h1>Pricing Plans</h1>
         <p>Choose the plan that best suits your car sales business, whether you're located in Canada or the USA. Each package is designed to help you sell more cars through targeted marketing, SEO, and more.</p>
+
         <div class="pricing-plans">
+            <!-- Basic Plan -->
             <div class="pricing-plan">
                 <h2>Basic</h2>
                 <p class="price">$500 USD/month (or $650 CAD/month)</p>
@@ -76,6 +80,8 @@
                 </ul>
                 <p>Basic Car Seller Plan</p>
             </div>
+
+            <!-- Premium Plan -->
             <div class="pricing-plan">
                 <h2>Premium</h2>
                 <p class="price">$1000 USD/month (or $1300 CAD/month)</p>
@@ -88,6 +94,8 @@
                 </ul>
                 <p>Premium Car Seller Plan</p>
             </div>
+
+            <!-- Enterprise Plan -->
             <div class="pricing-plan">
                 <h2>Enterprise</h2>
                 <p class="price">Custom Pricing</p>
@@ -105,39 +113,37 @@
     </section>
 
     <!-- Car Makes Sold Section -->
-<section id="car-makes-sold" class="section">
-    <h1>Car Makes Sold Across Canada & USA</h1>
-    <div class="car-makes-carousel-container">
-        <div class="car-makes-slider" id="carMakesSlider">
-            <!-- Car makes will be populated here by JavaScript -->
+    <section id="car-makes-sold" class="section">
+        <h1>Car Makes Sold Across Canada & USA</h1>
+        <div class="car-makes-carousel-container">
+            <div class="car-makes-slider"></div>
+        </div>
+    </section>
+
+  <!-- Cities Carousel Section -->
+<section id="cities" class="section">
+    <h2>Our Service Cities</h2>
+    <div class="cities-carousel-container">
+        <div class="cities-slider">
+            <div class="city">
+                <h3>New York</h3>
+            </div>
+            <div class="city">
+                <h3>Los Angeles</h3>
+            </div>
+            <div class="city">
+                <h3>Toronto</h3>
+            </div>
+            <div class="city">
+                <h3>Vancouver</h3>
+            </div>
+            <div class="city">
+                <h3>Miami</h3>
+            </div>
         </div>
     </div>
 </section>
 
-
-    <!-- Cities Carousel Section -->
-    <section id="cities" class="section">
-        <h2>Our Service Cities</h2>
-        <div class="cities-carousel-container">
-            <div class="cities-slider">
-                <div class="city">
-                    <h3>New York</h3>
-                </div>
-                <div class="city">
-                    <h3>Los Angeles</h3>
-                </div>
-                <div class="city">
-                    <h3>Toronto</h3>
-                </div>
-                <div class="city">
-                    <h3>Vancouver</h3>
-                </div>
-                <div class="city">
-                    <h3>Miami</h3>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section">
@@ -161,14 +167,18 @@
                     <button type="submit" id="newsletterSubmit">Subscribe</button>
                 </form>
             </div>
+
             <div class="socials">
                 <a href="https://www.instagram.com/buralehandco/?hl=en"><img src="https://static.vecteezy.com/system/resources/previews/017/743/717/non_2x/instagram-icon-logo-free-png.png" alt="Instagram"></a>
+                
             </div>
+
             <div class="footer-links">
                 <a href="privacy-policy.html" target="_blank">Privacy Policy</a> | 
                 <a href="terms-conditions.html" target="_blank">Terms & Conditions</a> | 
                 <a href="faq.html" target="_blank">FAQ</a>
             </div>
+
             <p>&copy; 2024 Buraleh & Co. All Rights Reserved.</p>
         </div>
     </footer>
