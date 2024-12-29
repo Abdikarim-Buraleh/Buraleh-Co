@@ -20,21 +20,52 @@ const testimonialsData = [
 
 // Car Makes Data (log URLs for 15 car makes)
 const carMakesData = [
-    { logoUrl: 'https://www.carlogos.org/car-logos/tesla-logo-2007.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/ford-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/chevrolet-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/honda-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/toyota-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/infiniti-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/bmw-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/mercedes-benz-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/land-rover-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/jaguar-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/audi-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/volkswagen-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/jeep-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/lincoln-logo.png' }
+    { logoUrl: 'https://www.carlogos.org/car-logos/tesla-logo-2007.png', name: 'Tesla' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/ford-logo.png', name: 'Ford' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/chevrolet-logo.png', name: 'Chevrolet' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/honda-logo.png', name: 'Honda' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/toyota-logo.png', name: 'Toyota' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/infiniti-logo.png', name: 'Infiniti' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/bmw-logo.png', name: 'BMW' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/mercedes-benz-logo.png', name: 'Mercedes-Benz' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/land-rover-logo.png', name: 'Land Rover' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/jaguar-logo.png', name: 'Jaguar' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/audi-logo.png', name: 'Audi' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/volkswagen-logo.png', name: 'Volkswagen' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/jeep-logo.png', name: 'Jeep' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/lincoln-logo.png', name: 'Lincoln' }
 ];
+
+// Function to populate car makes in the section
+function populateCarMakes() {
+    const slider = document.getElementById('carMakesSlider');
+
+    carMakesData.forEach(carMake => {
+        // Create the car make container
+        const carMakeDiv = document.createElement('div');
+        carMakeDiv.classList.add('car-make');
+        
+        // Create the logo image element
+        const imgElement = document.createElement('img');
+        imgElement.src = carMake.logoUrl;
+        imgElement.alt = carMake.name;
+
+        // Create the title element
+        const titleElement = document.createElement('h3');
+        titleElement.textContent = carMake.name;
+
+        // Append the image and title to the car make container
+        carMakeDiv.appendChild(imgElement);
+        carMakeDiv.appendChild(titleElement);
+
+        // Append the car make to the slider
+        slider.appendChild(carMakeDiv);
+    });
+}
+
+// Call the function to populate the car makes
+populateCarMakes();
+
 
 
 // Common function to load dynamic data (testimonials, car makes, or cities)
