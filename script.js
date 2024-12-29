@@ -36,29 +36,6 @@ const carMakesData = [
     { logoUrl: 'https://www.carlogos.org/car-logos/lincoln-logo.png' }
 ];
 
-// Cities Data
-const citiesData = [
-    "Toronto",
-    "Vancouver",
-    "Miami",
-    "Los Angeles",
-    "New York"
-];
-
-// Common function to load dynamic data (testimonials, car makes, or cities)
-function loadDynamicContent(data, containerClass, itemClass, contentFn) {
-    const container = document.querySelector(containerClass);
-    if (container) {
-        container.innerHTML = ''; // Clear existing content
-        data.forEach(item => {
-            const element = document.createElement('div');
-            element.classList.add(itemClass);
-            element.innerHTML = contentFn(item);
-            container.appendChild(element);
-        });
-    }
-}
-
 // Testimonials slide logic
 let currentTestimonialIndex = 0;
 
@@ -83,8 +60,6 @@ function slideCarMakes() {
     carMakesSlider.style.transition = 'transform 4s ease-in-out';
     carMakesSlider.style.transform = `translateX(-${currentCarMakeIndex * 170}px)`;
 }
-
-// Removed Cities slide logic since we are implementing the hover effect now
 
 // Carousel intervals
 let carouselIntervals = {
