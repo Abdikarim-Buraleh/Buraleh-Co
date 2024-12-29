@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth; /* Smooth scrolling across the page */
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-light);
@@ -64,6 +68,14 @@ nav ul li a:hover {
     color: transparent; /* Makes the text itself transparent so the gradient is visible */
 }
 
+nav ul li a:focus {
+    background: linear-gradient(135deg, #b39ddb, #d1c4e9); /* Same as hover */
+    -webkit-background-clip: text;
+    color: transparent;
+    outline: none; /* Removing default focus outline */
+    border-bottom: 2px solid var(--highlight-color); /* Adds a visual indicator for focus */
+}
+
 /* Hero Section */
 .hero {
     background: url('car-hero.jpg') no-repeat center center/cover;
@@ -106,11 +118,13 @@ nav ul li a:hover {
     margin-bottom: 20px;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.2; /* Added line height */
 }
 
 .hero p {
     font-size: 1.5rem;
     margin-bottom: 40px;
+    line-height: 1.6; /* Improved line spacing for readability */
 }
 
 .cta-btn {
@@ -126,6 +140,7 @@ nav ul li a:hover {
 .cta-btn:hover {
     background: var(--secondary-color);
     transform: translateY(-5px);
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
 }
 
 /* About Section */
@@ -242,12 +257,12 @@ nav ul li a:hover {
     .pricing-plans {
         flex-direction: column;
         align-items: center;
+        gap: 30px; /* Add more space between items for smaller screens */
     }
 
     .pricing-plan {
-        width: 100%;
-        max-width: 350px;
-        margin-bottom: 20px;
+        width: 90%;
+        max-width: 400px; /* Allowing more flexibility for the cards on small screens */
     }
 
     #pricing h1 {
@@ -256,6 +271,15 @@ nav ul li a:hover {
 
     #pricing p {
         font-size: 1.125rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Adjust hero heading size for smaller screens */
+    }
+
+    .cta-btn {
+        padding: 12px 25px; /* Reduce padding for smaller buttons */
+        font-size: 1rem; /* Adjust font size for smaller screens */
     }
 }
 
@@ -276,6 +300,7 @@ nav ul li a:hover {
 
 .car-list .car:hover {
     transform: translateY(-10px) scale(1.05);
+    transition: transform 0.3s ease; /* Ensure smooth scaling effect */
 }
 
 .car-list .car h3 {
@@ -298,7 +323,7 @@ nav ul li a:hover {
 .testimonials-carousel-container {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    overflow: hidden; /* Ensures no horizontal overflow */
 }
 
 .testimonials-slider {
@@ -382,141 +407,85 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px var(--shadow-light);
     border: 5px solid transparent;
     border-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) 1;
-    transition: transform 0.3s ease; /* Smooth transition effect */
+    transition: transform 0.3s ease; /* Add smooth transition for hover effect */
 }
 
-.city h3 {
-    font-size: 1.25rem;
-    color: var(--primary-color);
+.city img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Optionally add a hover effect for city names */
 .city:hover {
-    transform: scale(1.1); /* Pop effect */
-    box-shadow: 0 6px 10px var(--shadow-dark); /* Optional shadow on hover for a more popping effect */
+    transform: translateY(-10px); /* Adds a subtle hover effect */
 }
 
-.city:hover h3 {
-    transform: scale(1.1); /* Ensure text scales as well */
-}
-
-/* Contact Form */
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-form input,
-form textarea {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    transition: border 0.3s ease;
-}
-
-form input:focus,
-form textarea:focus {
-    border-color: var(--primary-color);
-}
-
-form button {
-    background: var(--cta-bg);
-    color: #fff;
-    padding: 15px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-form button:hover {
-    background: var(--secondary-color);
-    transform: translateY(-5px);
-}
-
-/* Footer */
+/* Footer Styling */
 footer {
-    background: var(--cta-bg);
-    padding: 50px 20px;
-    text-align: center;
+    background-color: var(--bg-dark);
     color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+footer .footer-content a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.125rem;
+    transition: color 0.3s ease;
+}
+
+footer .footer-content a:hover {
+    color: var(--highlight-color);
+    text-decoration: underline;
 }
 
 footer .socials {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
 footer .socials a {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    display: inline-block;
-}
-
-footer .socials img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-footer .socials a:hover img {
-    transform: scale(1.1);
-    opacity: 0.8;
-}
-
-footer .footer-content {
-    margin-top: 30px;
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-footer .footer-content p {
-    margin: 10px 0;
-}
-
-footer .footer-content a {
-    color: var(--highlight-color);
-    text-decoration: none;
-    font-weight: 600;
+    font-size: 1.5rem;
+    color: #fff;
     transition: color 0.3s ease;
 }
 
-footer .footer-content a:hover {
-    color: var(--primary-color);
+footer .socials a:hover {
+    color: var(--highlight-color);
 }
 
-/* Footer Links Styling */
-.footer-links {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #fff;
-}
-
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 10px;
-}
-
-.footer-links a:hover {
-    color: var(--primary-color);  /* Change this to your website's primary color */
-}
-
-/* Mobile Adjustments */
+/* Media Queries for Small Devices */
 @media screen and (max-width: 768px) {
-    nav ul {
+    .pricing-plans {
         flex-direction: column;
-        gap: 15px;
+        align-items: center;
+        gap: 30px; /* Add more space between items for smaller screens */
     }
 
-    footer {
-        padding: 40px 20px;
+    .pricing-plan {
+        width: 90%;
+        max-width: 400px; /* Allowing more flexibility for the cards on small screens */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Adjust hero heading size for smaller screens */
+    }
+
+    .cta-btn {
+        padding: 12px 25px; /* Reduce padding for smaller buttons */
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
     }
 }
