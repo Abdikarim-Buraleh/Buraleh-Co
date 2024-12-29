@@ -17,7 +17,6 @@ const testimonialsData = [
     { text: "We’ve cut down on ad spend significantly while increasing sales volume in Los Angeles. Best decision ever!", author: "Amanda Scott - Marketing Director, Markham Toyota" }
 ];
 
-
 // Car Makes Data (log URLs for 15 car makes)
 const carMakesData = [
     { logoUrl: 'https://www.carlogos.org/car-logos/tesla-logo-2007.png' },
@@ -80,7 +79,20 @@ function addCarouselHoverListeners(containerClass, intervalType) {
     }
 }
 
-// Added hover effect for cities
+// Load dynamic content for both car makes and testimonials
+function loadDynamicContent(data, containerClass, itemClass, renderItemContent) {
+    const container = document.querySelector(containerClass);
+    if (!container) return;
+
+    data.forEach(item => {
+        const element = document.createElement('div');
+        element.classList.add(itemClass);
+        element.innerHTML = renderItemContent(item);
+        container.appendChild(element);
+    });
+}
+
+// Initialize the page and carousels
 document.addEventListener('DOMContentLoaded', () => {
     // Load testimonials and car makes dynamically
     loadDynamicContent(testimonialsData, '.testimonials-slider', 'testimonial', item => `
@@ -90,26 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
     loadDynamicContent(carMakesData, '.car-makes-slider', 'car-make-logo', item => `
         <img src="${item.logoUrl}" alt="Car Make">
     `);
-    loadDynamicContent(citiesData, '.cities-slider', 'city', city => `
-        <h3>${city}</h3>
-    `);
 
-    // Add hover effect for cities to make them pop
-    const cities = document.querySelectorAll('.city');
-    cities.forEach(city => {
-        city.addEventListener('mouseover', () => {
-            // Add pop effect on hover
-            city.style.transform = 'scale(1.1)';
-            city.style.transition = 'transform 0.3s ease';
-        });
-
-        city.addEventListener('mouseout', () => {
-            // Reset the pop effect when hover is removed
-            city.style.transform = 'scale(1)';
-        });
-    });
-
-    // Initialize the other sliders
+    // Initialize the carousels
     slideTestimonials();
     slideCarMakes();
 
