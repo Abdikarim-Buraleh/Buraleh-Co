@@ -84,26 +84,6 @@ function slideCarMakes() {
     carMakesSlider.style.transform = `translateX(-${currentCarMakeIndex * 170}px)`;
 }
 
-// Removed Cities slide logic since we are implementing the hover effect now
-
-// Carousel intervals
-let carouselIntervals = {
-    testimonials: setInterval(slideTestimonials, 4000),
-    carMakes: setInterval(slideCarMakes, 4000)
-};
-
-// Hover event listeners to pause and resume carousels
-function addCarouselHoverListeners(containerClass, intervalType) {
-    const container = document.querySelector(containerClass);
-    if (container) {
-        container.addEventListener('mouseover', () => {
-            clearInterval(carouselIntervals[intervalType]);
-        });
-        container.addEventListener('mouseout', () => {
-            carouselIntervals[intervalType] = setInterval(window[`${intervalType}Slider`], 4000);
-        });
-    }
-}
 
 // Added hover effect for cities
 document.addEventListener('DOMContentLoaded', () => {
