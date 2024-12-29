@@ -35,16 +35,27 @@ const carMakesData = [
     { logoUrl: 'https://www.carlogos.org/car-logos/lincoln-logo.png' }
 ];
 
-// Common function to load dynamic data (testimonials or car makes)
+// Cities Data
+const citiesData = [
+    "Toronto",
+    "Vancouver",
+    "Miami",
+    "Los Angeles",
+    "New York"
+];
+
+// Common function to load dynamic data (testimonials, car makes, or cities)
 function loadDynamicContent(data, containerClass, itemClass, contentFn) {
     const container = document.querySelector(containerClass);
-    container.innerHTML = ''; // Clear existing content
-    data.forEach(item => {
-        const element = document.createElement('div');
-        element.classList.add(itemClass);
-        element.innerHTML = contentFn(item);
-        container.appendChild(element);
-    });
+    if (container) {
+        container.innerHTML = ''; // Clear existing content
+        data.forEach(item => {
+            const element = document.createElement('div');
+            element.classList.add(itemClass);
+            element.innerHTML = contentFn(item);
+            container.appendChild(element);
+        });
+    }
 }
 
 // Testimonials slide logic
@@ -52,6 +63,8 @@ let currentTestimonialIndex = 0;
 
 function slideTestimonials() {
     const testimonialsSlider = document.querySelector('.testimonials-slider');
+    if (!testimonialsSlider) return;
+
     const totalTestimonials = testimonialsData.length;
     currentTestimonialIndex = (currentTestimonialIndex + 1) % totalTestimonials;
     testimonialsSlider.style.transform = `translateX(-${currentTestimonialIndex * 320}px)`;
@@ -62,11 +75,15 @@ let currentCarMakeIndex = 0;
 
 function slideCarMakes() {
     const carMakesSlider = document.querySelector('.car-makes-slider');
+    if (!carMakesSlider) return;
+
     const totalCarMakes = carMakesData.length;
     currentCarMakeIndex = (currentCarMakeIndex + 1) % totalCarMakes;
     carMakesSlider.style.transition = 'transform 4s ease-in-out';
     carMakesSlider.style.transform = `translateX(-${currentCarMakeIndex * 170}px)`;
 }
+
+// Removed Cities slide logic since we are implementing the hover effect now
 
 // Carousel intervals
 let carouselIntervals = {
@@ -76,16 +93,20 @@ let carouselIntervals = {
 
 // Hover event listeners to pause and resume carousels
 function addCarouselHoverListeners(containerClass, intervalType) {
-    document.querySelector(containerClass).addEventListener('mouseover', () => {
-        clearInterval(carouselIntervals[intervalType]);
-    });
-    document.querySelector(containerClass).addEventListener('mouseout', () => {
-        carouselIntervals[intervalType] = setInterval(window[`${intervalType}Slider`], 4000);
-    });
+    const container = document.querySelector(containerClass);
+    if (container) {
+        container.addEventListener('mouseover', () => {
+            clearInterval(carouselIntervals[intervalType]);
+        });
+        container.addEventListener('mouseout', () => {
+            carouselIntervals[intervalType] = setInterval(window[`${intervalType}Slider`], 4000);
+        });
+    }
 }
 
-// Load initial dynamic content and set up carousels
-window.onload = function () {
+// Added hover effect for cities
+document.addEventListener('DOMContentLoaded', () => {
+    // Load testimonials and car makes dynamically
     loadDynamicContent(testimonialsData, '.testimonials-slider', 'testimonial', item => `
         <p>"${item.text}"</p>
         <h3>${item.author}</h3>
@@ -93,46 +114,30 @@ window.onload = function () {
     loadDynamicContent(carMakesData, '.car-makes-slider', 'car-make-logo', item => `
         <img src="${item.logoUrl}" alt="Car Make">
     `);
+    loadDynamicContent(citiesData, '.cities-slider', 'city', city => `
+        <h3>${city}</h3>
+    `);
+
+    // Add hover effect for cities to make them pop
+    const cities = document.querySelectorAll('.city');
+    cities.forEach(city => {
+        city.addEventListener('mouseover', () => {
+            // Add pop effect on hover
+            city.style.transform = 'scale(1.1)';
+            city.style.transition = 'transform 0.3s ease';
+        });
+
+        city.addEventListener('mouseout', () => {
+            // Reset the pop effect when hover is removed
+            city.style.transform = 'scale(1)';
+        });
+    });
+
+    // Initialize the other sliders
     slideTestimonials();
     slideCarMakes();
+
+    // Add hover listeners for testimonials and car makes
     addCarouselHoverListeners('.testimonials-carousel-container', 'testimonials');
     addCarouselHoverListeners('.car-makes-carousel-container', 'carMakes');
-};
-// Car makes slide logic
-let currentCarMakeIndex = 0;
-
-function slideCarMakes() {
-    const carMakesSlider = document.querySelector('.car-makes-slider');
-    const totalCarMakes = carMakesData.length;
-    
-    // Ensure carMakesSlider exists before applying styles
-    if (!carMakesSlider) return;
-    
-    currentCarMakeIndex = (currentCarMakeIndex + 1) % totalCarMakes;
-    
-    // Set transition for smooth sliding
-    carMakesSlider.style.transition = 'transform 4s ease-in-out';
-    
-    // Ensure the width used for translation matches the actual width of each car make element
-    const carMakeWidth = 170; // Replace with the actual width of each item
-    carMakesSlider.style.transform = `translateX(-${currentCarMakeIndex * carMakeWidth}px)`;
-}
-// Car makes slide logic
-let currentCarMakeIndex = 0;
-
-function slideCarMakes() {
-    const carMakesSlider = document.querySelector('.car-makes-slider');
-    const totalCarMakes = carMakesData.length;
-    
-    // Ensure carMakesSlider exists before applying styles
-    if (!carMakesSlider) return;
-    
-    currentCarMakeIndex = (currentCarMakeIndex + 1) % totalCarMakes;
-    
-    // Set transition for smooth sliding
-    carMakesSlider.style.transition = 'transform 4s ease-in-out';
-    
-    // Ensure the width used for translation matches the actual width of each car make element
-    const carMakeWidth = 170; // Replace with the actual width of each item
-    carMakesSlider.style.transform = `translateX(-${currentCarMakeIndex * carMakeWidth}px)`;
-}
+});
