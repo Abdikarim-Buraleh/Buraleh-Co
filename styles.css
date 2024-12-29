@@ -262,6 +262,7 @@ nav ul li a:hover {
     }
 }
 
+/* Car Makes Sold Section - No Carousel */
 #carList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -297,74 +298,7 @@ nav ul li a:hover {
     color: var(--highlight-color);
 }
 
-/* Testimonials Carousel */
-.testimonials-carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.testimonials-slider {
-    display: flex;
-    transition: transform 4s ease-in-out;
-}
-
-.testimonial {
-    min-width: 300px;
-    margin-right: 20px;
-    text-align: center;
-    flex-shrink: 0;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px var(--shadow-light);
-    border: 5px solid transparent;
-    border-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) 1;
-}
-
-.testimonial p {
-    font-size: 1rem;
-    color: var(--bg-dark);
-    margin-bottom: 10px;
-}
-
-.testimonial h3 {
-    font-size: 0.875rem;
-    color: #777;
-}
-
-/* Car Makes Sold Carousel */
-.car-makes-carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    margin-top: 40px;
-}
-
-.car-makes-slider {
-    display: flex;
-    transition: transform 4s ease-in-out;
-}
-
-.car-make-logo {
-    min-width: 170px;
-    margin-right: 20px;
-    text-align: center;
-    flex-shrink: 0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px var(--shadow-light);
-    border: 5px solid transparent;
-    border-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) 1;
-}
-
-.car-make-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-/* Cities Carousel Styles */
+/* Cities Section - No Carousel */
 #sold-in-cities {
     padding: 50px 0;
     background-color: #f4f4f4;
@@ -378,22 +312,7 @@ nav ul li a:hover {
     color: #333;
 }
 
-.cities-carousel-container {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
-.cities-slider {
-    display: flex;
-    animation: slide 20s linear infinite;
-}
-
 .city-item {
-    position: relative;
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 300px;
     margin: 0 15px;
     text-align: center;
 }
@@ -426,25 +345,6 @@ nav ul li a:hover {
     font-weight: 700;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
-
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(-100%);
-    }
-    50% {
-        transform: translateX(-200%);
-    }
-    75% {
-        transform: translateX(-300%);
-    }
-    100% {
-        transform: translateX(-400%);
-    }
-}
-
 
 /* Contact Form */
 form {
@@ -566,6 +466,3 @@ footer .footer-content a:hover {
         padding: 40px 20px;
     }
 }
-
-
-   
