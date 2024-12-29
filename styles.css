@@ -364,6 +364,88 @@ nav ul li a:hover {
     object-fit: contain;
 }
 
+/* Cities Carousel Styles */
+#sold-in-cities {
+    padding: 50px 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#sold-in-cities h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.cities-carousel-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.cities-slider {
+    display: flex;
+    animation: slide 20s linear infinite;
+}
+
+.city-item {
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 15px;
+    text-align: center;
+}
+
+.city-background {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.city-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Darken the background */
+}
+
+.city-item p {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+    75% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(-400%);
+    }
+}
+
+
 /* Contact Form */
 form {
     display: flex;
