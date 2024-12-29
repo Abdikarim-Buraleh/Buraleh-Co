@@ -64,7 +64,6 @@ nav ul li a:hover {
     color: transparent; /* Makes the text itself transparent so the gradient is visible */
 }
 
-
 /* Hero Section */
 .hero {
     background: url('car-hero.jpg') no-repeat center center/cover;
@@ -100,7 +99,6 @@ nav ul li a:hover {
     height: 100%;  /* Video will be sized to fit its container */
     object-fit: cover;  /* This ensures the video covers the background without distortion */
 }
-
 
 .hero h1 {
     font-size: 3rem;
@@ -155,7 +153,6 @@ nav ul li a:hover {
     padding: 60px 20px;
     text-align: center;
 }
-
 
 /* Pricing Section Styles */
 #pricing {
@@ -262,7 +259,6 @@ nav ul li a:hover {
     }
 }
 
-/* Car Makes Sold Section - No Carousel */
 #carList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -298,52 +294,110 @@ nav ul li a:hover {
     color: var(--highlight-color);
 }
 
-/* Cities Section - No Carousel */
-#sold-in-cities {
-    padding: 50px 0;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-#sold-in-cities h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-.city-item {
-    margin: 0 15px;
-    text-align: center;
-}
-
-.city-background {
-    width: 100%;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
+/* Testimonials Carousel */
+.testimonials-carousel-container {
     position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
-.city-background::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+.testimonials-slider {
+    display: flex;
+    transition: transform 4s ease-in-out;
+}
+
+.testimonial {
+    min-width: 300px;
+    margin-right: 20px;
+    text-align: center;
+    flex-shrink: 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    border: 5px solid transparent;
+    border-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) 1;
+}
+
+.testimonial p {
+    font-size: 1rem;
+    color: var(--bg-dark);
+    margin-bottom: 10px;
+}
+
+.testimonial h3 {
+    font-size: 0.875rem;
+    color: #777;
+}
+
+/* Car Makes Sold Carousel */
+.car-makes-carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+.car-makes-slider {
+    display: flex;
+    transition: transform 4s ease-in-out;
+}
+
+.car-make-logo {
+    min-width: 170px;
+    margin-right: 20px;
+    text-align: center;
+    flex-shrink: 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    border: 5px solid transparent;
+    border-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) 1;
+}
+
+.car-make-logo img {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Darken the background */
+    object-fit: contain;
 }
 
-.city-item p {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+/* Cities Carousel */
+.cities-slider {
+    display: flex;
+    transition: transform 4s ease-in-out;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Align items vertically in case they are unevenly spaced */
+    gap: 20px; /* Space between city items */
+    margin: 0 auto; /* Center the entire carousel */
+}
+
+/* Each City Item */
+.city {
+    min-width: 170px;
+    margin-right: 20px;
+    text-align: center;
+    flex-shrink: 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    border: 5px solid transparent;
+    border-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) 1;
+    transition: transform 0.3s ease; /* Smooth transition effect */
+}
+
+.city h3 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+/* Optionally add a hover effect for city names */
+.city:hover {
+    transform: scale(1.1); /* Pop effect */
+    box-shadow: 0 6px 10px var(--shadow-dark); /* Optional shadow on hover for a more popping effect */
+}
+
+.city:hover h3 {
+    transform: scale(1.1); /* Ensure text scales as well */
 }
 
 /* Contact Form */
