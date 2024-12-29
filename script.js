@@ -17,6 +17,7 @@ const testimonialsData = [
     { text: "We’ve cut down on ad spend significantly while increasing sales volume. Best decision ever!", author: "Amanda Young - Marketing Director, Markham Toyota" }
 ];
 
+
 // Car Makes Data (log URLs for 15 car makes)
 const carMakesData = [
     { logoUrl: 'https://www.carlogos.org/car-logos/tesla-logo-2007.png' },
