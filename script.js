@@ -17,7 +17,6 @@ const testimonialsData = [
     { text: "We’ve cut down on ad spend significantly while increasing sales volume in Los Angeles. Best decision ever!", author: "Amanda Scott - Marketing Director, Markham Toyota" }
 ];
 
-
 // Car Makes Data (log URLs for 15 car makes)
 const carMakesData = [
     { logoUrl: 'https://www.carlogos.org/car-logos/tesla-logo-2007.png' },
@@ -36,8 +35,12 @@ const carMakesData = [
     { logoUrl: 'https://www.carlogos.org/car-logos/lincoln-logo.png' }
 ];
 
+// Cities Data (5 major cities)
+const citiesData = [
+    "Toronto", "New York", "Vancouver", "Miami", "Los Angeles"
+];
 
-// Common function to load dynamic data (testimonials, car makes, or cities)
+// Common function to load dynamic content (testimonials, car makes, or cities)
 function loadDynamicContent(data, containerClass, itemClass, contentFn) {
     const container = document.querySelector(containerClass);
     if (container) {
@@ -60,7 +63,8 @@ function slideTestimonials() {
 
     const totalTestimonials = testimonialsData.length;
     currentTestimonialIndex = (currentTestimonialIndex + 1) % totalTestimonials;
-    testimonialsSlider.style.transform = `translateX(-${currentTestimonialIndex * 320}px)`;
+    const itemWidth = document.querySelector('.testimonial')?.offsetWidth || 320; // Default to 320px
+    testimonialsSlider.style.transform = `translateX(-${currentTestimonialIndex * itemWidth}px)`;
 }
 
 // Car makes slide logic
@@ -72,11 +76,10 @@ function slideCarMakes() {
 
     const totalCarMakes = carMakesData.length;
     currentCarMakeIndex = (currentCarMakeIndex + 1) % totalCarMakes;
+    const itemWidth = document.querySelector('.car-make-logo')?.offsetWidth || 170; // Default to 170px
     carMakesSlider.style.transition = 'transform 4s ease-in-out';
-    carMakesSlider.style.transform = `translateX(-${currentCarMakeIndex * 170}px)`;
+    carMakesSlider.style.transform = `translateX(-${currentCarMakeIndex * itemWidth}px)`;
 }
-
-// Removed Cities slide logic since we are implementing the hover effect now
 
 // Carousel intervals
 let carouselIntervals = {
@@ -92,26 +95,17 @@ function addCarouselHoverListeners(containerClass, intervalType) {
             clearInterval(carouselIntervals[intervalType]);
         });
         container.addEventListener('mouseout', () => {
-            carouselIntervals[intervalType] = setInterval(window[`${intervalType}Slider`], 4000);
+            if (intervalType === 'testimonials') {
+                carouselIntervals.testimonials = setInterval(slideTestimonials, 4000);
+            } else if (intervalType === 'carMakes') {
+                carouselIntervals.carMakes = setInterval(slideCarMakes, 4000);
+            }
         });
     }
 }
 
-// Added hover effect for cities
-document.addEventListener('DOMContentLoaded', () => {
-    // Load testimonials and car makes dynamically
-    loadDynamicContent(testimonialsData, '.testimonials-slider', 'testimonial', item => `
-        <p>"${item.text}"</p>
-        <h3>${item.author}</h3>
-    `);
-    loadDynamicContent(carMakesData, '.car-makes-slider', 'car-make-logo', item => `
-        <img src="${item.logoUrl}" alt="Car Make">
-    `);
-    loadDynamicContent(citiesData, '.cities-slider', 'city', city => `
-        <h3>${city}</h3>
-    `);
-
-    // Add hover effect for cities to make them pop
+// Hover effect for cities
+function addCityHoverEffect() {
     const cities = document.querySelectorAll('.city');
     cities.forEach(city => {
         city.addEventListener('mouseover', () => {
@@ -125,6 +119,24 @@ document.addEventListener('DOMContentLoaded', () => {
             city.style.transform = 'scale(1)';
         });
     });
+}
+
+// Initialize everything after the DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Load testimonials and car makes dynamically
+    loadDynamicContent(testimonialsData, '.testimonials-slider', 'testimonial', item => `
+        <p>"${item.text}"</p>
+        <h3>${item.author}</h3>
+    `);
+    loadDynamicContent(carMakesData, '.car-makes-slider', 'car-make-logo', item => `
+        <img src="${item.logoUrl}" alt="Car Make">
+    `);
+    loadDynamicContent(citiesData, '.cities-slider', 'city', city => `
+        <h3>${city}</h3>
+    `);
+
+    // Add hover effect for cities
+    addCityHoverEffect();
 
     // Initialize the other sliders
     slideTestimonials();
