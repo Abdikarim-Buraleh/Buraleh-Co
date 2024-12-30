@@ -7,10 +7,6 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth; /* Smooth scrolling across the page */
-}
-
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-light);
@@ -68,14 +64,6 @@ nav ul li a:hover {
     color: transparent; /* Makes the text itself transparent so the gradient is visible */
 }
 
-nav ul li a:focus {
-    background: linear-gradient(135deg, #b39ddb, #d1c4e9); /* Same as hover */
-    -webkit-background-clip: text;
-    color: transparent;
-    outline: none; /* Removing default focus outline */
-    border-bottom: 2px solid var(--highlight-color); /* Adds a visual indicator for focus */
-}
-
 /* Hero Section */
 .hero {
     background: url('car-hero.jpg') no-repeat center center/cover;
@@ -118,13 +106,11 @@ nav ul li a:focus {
     margin-bottom: 20px;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    line-height: 1.2; /* Added line height */
 }
 
 .hero p {
     font-size: 1.5rem;
     margin-bottom: 40px;
-    line-height: 1.6; /* Improved line spacing for readability */
 }
 
 .cta-btn {
@@ -140,7 +126,6 @@ nav ul li a:focus {
 .cta-btn:hover {
     background: var(--secondary-color);
     transform: translateY(-5px);
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
 }
 
 /* About Section */
@@ -257,12 +242,12 @@ nav ul li a:focus {
     .pricing-plans {
         flex-direction: column;
         align-items: center;
-        gap: 30px; /* Add more space between items for smaller screens */
     }
 
     .pricing-plan {
-        width: 90%;
-        max-width: 400px; /* Allowing more flexibility for the cards on small screens */
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
     }
 
     #pricing h1 {
@@ -271,15 +256,6 @@ nav ul li a:focus {
 
     #pricing p {
         font-size: 1.125rem;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem; /* Adjust hero heading size for smaller screens */
-    }
-
-    .cta-btn {
-        padding: 12px 25px; /* Reduce padding for smaller buttons */
-        font-size: 1rem; /* Adjust font size for smaller screens */
     }
 }
 
@@ -300,7 +276,6 @@ nav ul li a:focus {
 
 .car-list .car:hover {
     transform: translateY(-10px) scale(1.05);
-    transition: transform 0.3s ease; /* Ensure smooth scaling effect */
 }
 
 .car-list .car h3 {
@@ -323,7 +298,7 @@ nav ul li a:focus {
 .testimonials-carousel-container {
     position: relative;
     width: 100%;
-    overflow: hidden; /* Ensures no horizontal overflow */
+    overflow: hidden;
 }
 
 .testimonials-slider {
@@ -357,7 +332,7 @@ nav ul li a:focus {
 
 /* Car Makes Sold Carousel */
 .car-makes-carousel-container {
-    position: relative;
+    position: center;
     width: 100%;
     overflow: hidden;
     margin-top: 40px;
@@ -389,14 +364,13 @@ nav ul li a:focus {
 /* Cities Carousel */
 .cities-slider {
     display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
     transition: transform 4s ease-in-out;
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Align items vertically in case they are unevenly spaced */
-    gap: 20px; /* Space between city items */
-    margin: 0 auto; /* Center the entire carousel */
+    overflow: hidden; /* Optional, hides overflow for a clean look */
+    width: 100%; /* Ensure it uses full width of the container */
 }
 
-/* Each City Item */
 .city {
     min-width: 170px;
     margin-right: 20px;
@@ -407,85 +381,143 @@ nav ul li a:focus {
     box-shadow: 0 4px 8px var(--shadow-light);
     border: 5px solid transparent;
     border-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) 1;
-    transition: transform 0.3s ease; /* Add smooth transition for hover effect */
+    transition: transform 0.3s ease; /* Smooth transform transition */
 }
 
-.city img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.city h3 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease; /* Ensure the text scale is smooth */
 }
 
+/* Hover effect for city names */
 .city:hover {
-    transform: translateY(-10px); /* Adds a subtle hover effect */
+    transform: scale(1.1); /* Pop effect */
+    box-shadow: 0 6px 10px var(--shadow-dark); /* Optional shadow on hover for a more popping effect */
 }
 
-/* Footer Styling */
-footer {
-    background-color: var(--bg-dark);
-    color: #fff;
-    padding: 40px 20px;
-    text-align: center;
+.city:hover h3 {
+    transform: scale(1.1); /* Ensure text scales as well */
 }
 
-footer .footer-content {
+
+/* Contact Form */
+form {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-footer .footer-content a {
+form input,
+form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: border 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--primary-color);
+}
+
+form button {
+    background: var(--cta-bg);
     color: #fff;
-    text-decoration: none;
-    font-size: 1.125rem;
-    transition: color 0.3s ease;
+    padding: 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-footer .footer-content a:hover {
-    color: var(--highlight-color);
-    text-decoration: underline;
+form button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    background: var(--cta-bg);
+    padding: 50px 20px;
+    text-align: center;
+    color: #fff;
 }
 
 footer .socials {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
 footer .socials a {
-    font-size: 1.5rem;
-    color: #fff;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: inline-block;
+}
+
+footer .socials img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+footer .socials a:hover img {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+footer .footer-content {
+    margin-top: 30px;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+footer .footer-content p {
+    margin: 10px 0;
+}
+
+footer .footer-content a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
-footer .socials a:hover {
-    color: var(--highlight-color);
+footer .footer-content a:hover {
+    color: var(--primary-color);
 }
 
-/* Media Queries for Small Devices */
+/* Footer Links Styling */
+.footer-links {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);  /* Change this to your website's primary color */
+}
+
+/* Mobile Adjustments */
 @media screen and (max-width: 768px) {
-    .pricing-plans {
+    nav ul {
         flex-direction: column;
-        align-items: center;
-        gap: 30px; /* Add more space between items for smaller screens */
+        gap: 15px;
     }
 
-    .pricing-plan {
-        width: 90%;
-        max-width: 400px; /* Allowing more flexibility for the cards on small screens */
-    }
-
-    .hero h1 {
-        font-size: 2.5rem; /* Adjust hero heading size for smaller screens */
-    }
-
-    .cta-btn {
-        padding: 12px 25px; /* Reduce padding for smaller buttons */
-        font-size: 1rem; /* Adjust font size for smaller screens */
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
+    footer {
+        padding: 40px 20px;
     }
 }
