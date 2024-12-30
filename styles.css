@@ -400,7 +400,6 @@ nav ul li a:hover {
     transform: scale(1.1); /* Ensure text scales as well */
 }
 
-
 /* Contact Form */
 form {
     display: flex;
@@ -516,8 +515,16 @@ footer .footer-content a:hover {
         flex-direction: column;
         gap: 15px;
     }
-
-    footer {
-        padding: 40px 20px;
+    
+    header {
+        padding: 10px 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
     }
 }
