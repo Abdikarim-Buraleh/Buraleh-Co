@@ -170,14 +170,52 @@
 
             <div class="socials">
                 <a href="https://www.instagram.com/buralehandco/?hl=en"><img src="https://static.vecteezy.com/system/resources/previews/017/743/717/non_2x/instagram-icon-logo-free-png.png" alt="Instagram"></a>
+                
             </div>
+
             <div class="footer-links">
                 <a href="privacy-policy.html" target="_blank">Privacy Policy</a> | 
                 <a href="terms-conditions.html" target="_blank">Terms & Conditions</a> | 
                 <a href="faq.html" target="_blank">FAQ</a>
             </div>
+
             <p>&copy; 2024 Buraleh & Co. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // YouTube Player API functionality to control video behavior
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('bg-video', {
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.ENDED) {
+                // When video ends, restart from 30 seconds
+                player.seekTo(30);
+                player.playVideo();
+            }
+        }
+
+        // Ensure video starts from 30 seconds when the page is loaded
+        window.onload = function() {
+            player.seekTo(30);
+        };
+    </script>
 </body>
 </html>
