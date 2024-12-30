@@ -20,52 +20,21 @@ const testimonialsData = [
 
 // Car Makes Data (log URLs for 15 car makes)
 const carMakesData = [
-    { logoUrl: 'https://www.carlogos.org/car-logos/tesla-logo-2007.png', name: 'Tesla' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/ford-logo.png', name: 'Ford' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/chevrolet-logo.png', name: 'Chevrolet' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/honda-logo.png', name: 'Honda' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/toyota-logo.png', name: 'Toyota' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/infiniti-logo.png', name: 'Infiniti' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/bmw-logo.png', name: 'BMW' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/mercedes-benz-logo.png', name: 'Mercedes-Benz' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/land-rover-logo.png', name: 'Land Rover' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/jaguar-logo.png', name: 'Jaguar' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/audi-logo.png', name: 'Audi' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/volkswagen-logo.png', name: 'Volkswagen' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/jeep-logo.png', name: 'Jeep' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/lincoln-logo.png', name: 'Lincoln' }
+    { logoUrl: 'https://www.carlogos.org/car-logos/tesla-logo-2007.png' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/ford-logo.png' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/chevrolet-logo.png' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/honda-logo.png' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/toyota-logo.png' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/infiniti-logo.png' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/bmw-logo.png' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/mercedes-benz-logo.png' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/land-rover-logo.png' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/jaguar-logo.png' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/audi-logo.png' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/volkswagen-logo.png' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/jeep-logo.png' },
+    { logoUrl: 'https://www.carlogos.org/car-logos/lincoln-logo.png' }
 ];
-
-// Function to populate car makes in the section
-function populateCarMakes() {
-    const slider = document.getElementById('carMakesSlider');
-
-    carMakesData.forEach(carMake => {
-        // Create the car make container
-        const carMakeDiv = document.createElement('div');
-        carMakeDiv.classList.add('car-make');
-        
-        // Create the logo image element
-        const imgElement = document.createElement('img');
-        imgElement.src = carMake.logoUrl;
-        imgElement.alt = carMake.name;
-
-        // Create the title element
-        const titleElement = document.createElement('h3');
-        titleElement.textContent = carMake.name;
-
-        // Append the image and title to the car make container
-        carMakeDiv.appendChild(imgElement);
-        carMakeDiv.appendChild(titleElement);
-
-        // Append the car make to the slider
-        slider.appendChild(carMakeDiv);
-    });
-}
-
-// Call the function to populate the car makes
-populateCarMakes();
-
 
 
 // Common function to load dynamic data (testimonials, car makes, or cities)
@@ -91,7 +60,7 @@ function slideTestimonials() {
 
     const totalTestimonials = testimonialsData.length;
     currentTestimonialIndex = (currentTestimonialIndex + 1) % totalTestimonials;
-    testimonialsSlider.style.transform = translateX(-${currentTestimonialIndex * 320}px);
+    testimonialsSlider.style.transform = `translateX(-${currentTestimonialIndex * 320}px)`;
 }
 
 // Car makes slide logic
@@ -104,7 +73,7 @@ function slideCarMakes() {
     const totalCarMakes = carMakesData.length;
     currentCarMakeIndex = (currentCarMakeIndex + 1) % totalCarMakes;
     carMakesSlider.style.transition = 'transform 4s ease-in-out';
-    carMakesSlider.style.transform = translateX(-${currentCarMakeIndex * 170}px);
+    carMakesSlider.style.transform = `translateX(-${currentCarMakeIndex * 170}px)`;
 }
 
 // Removed Cities slide logic since we are implementing the hover effect now
@@ -123,7 +92,7 @@ function addCarouselHoverListeners(containerClass, intervalType) {
             clearInterval(carouselIntervals[intervalType]);
         });
         container.addEventListener('mouseout', () => {
-            carouselIntervals[intervalType] = setInterval(window[${intervalType}Slider], 4000);
+            carouselIntervals[intervalType] = setInterval(window[`${intervalType}Slider`], 4000);
         });
     }
 }
@@ -131,16 +100,16 @@ function addCarouselHoverListeners(containerClass, intervalType) {
 // Added hover effect for cities
 document.addEventListener('DOMContentLoaded', () => {
     // Load testimonials and car makes dynamically
-    loadDynamicContent(testimonialsData, '.testimonials-slider', 'testimonial', item => 
+    loadDynamicContent(testimonialsData, '.testimonials-slider', 'testimonial', item => `
         <p>"${item.text}"</p>
         <h3>${item.author}</h3>
-    );
-    loadDynamicContent(carMakesData, '.car-makes-slider', 'car-make-logo', item => 
+    `);
+    loadDynamicContent(carMakesData, '.car-makes-slider', 'car-make-logo', item => `
         <img src="${item.logoUrl}" alt="Car Make">
-    );
-    loadDynamicContent(citiesData, '.cities-slider', 'city', city => 
+    `);
+    loadDynamicContent(citiesData, '.cities-slider', 'city', city => `
         <h3>${city}</h3>
-    );
+    `);
 
     // Add hover effect for cities to make them pop
     const cities = document.querySelectorAll('.city');
