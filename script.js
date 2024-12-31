@@ -1,40 +1,42 @@
 // Testimonial Data (15 entries with real car dealerships in Toronto, New York, Vancouver, Miami, and Los Angeles)
+// Testimonial Data (15 entries with specific boat model sales in Toronto, New York, Vancouver, Miami, and Los Angeles)
 const testimonialsData = [
-    { text: "Buraleh & Co helped us sell cars 30% faster through targeted marketing and geolocation ads in Toronto!", author: "Chris Williams - Sales Manager, Dilawri Group of Companies" },
-    { text: "The geolocation-based ads brought in more qualified buyers and reduced our marketing costs in Toronto.", author: "Jessica Taylor - Dealer, Go Auto" },
-    { text: "We saw a significant increase in engagement thanks to Buraleh & Co's marketing strategy in Vancouver.", author: "David Carter - Owner, Porsche Centre Vancouver" },
-    { text: "Targeted marketing has significantly improved our conversion rates in Toronto. Highly recommend!", author: "Olivia Harris - Sales Director, Toronto Honda" },
-    { text: "Fantastic results with SEO-optimized ads. We've seen more traffic than ever before in Vancouver.", author: "Matthew Robinson - Car Sales Rep, Vancouver BMW" },
-    { text: "We trust Buraleh & Co for all our advertising needs. Our sales have doubled in Los Angeles.", author: "Michael Thompson - Sales Manager, Highlander Toyota" },
-    { text: "The ability to target potential buyers within a specific radius has been game-changing in Vancouver.", author: "Rachel Peterson - Owner, St. John's Ford" },
-    { text: "Their geolocation strategy works wonders! We’re reaching new customers every day in Toronto.", author: "Will Turner - Marketing Head, AutoCanada" },
-    { text: "Great customer service and even better results! Buraleh & Co is the real deal in Toronto.", author: "Samantha Brooks - Owner, Calgary's Crowfoot Ford" },
-    { text: "With Buraleh & Co, we are able to engage highly targeted buyers, not just leads in Vancouver.", author: "Emily Jenkins - Sales Rep, Windsor Mazda" },
-    { text: "The results speak for themselves! Higher quality leads, more car sales in New York.", author: "Charlie King - Sales Rep, Sherwood Park Toyota" },
-    { text: "We’ve been using Buraleh & Co's service for over a year, and it just keeps getting better in Miami.", author: "Evelyn Martinez - Marketing Manager, Edmonton Mitsubishi" },
-    { text: "From ad creation to conversion, Buraleh & Co has streamlined everything. Very happy in New York.", author: "Ben Lewis - Car Salesman, Montreal Kia" },
-    { text: "With their SEO expertise, our car listings are getting more views than ever in Miami.", author: "George Evans - Sales Manager, Mississauga Chrysler" },
-    { text: "We’ve cut down on ad spend significantly while increasing sales volume in Los Angeles. Best decision ever!", author: "Amanda Scott - Marketing Director, Markham Toyota" }
+    { text: "We sold our 2022 Sea Ray SLX 400 30% faster thanks to Buraleh & Co's targeted marketing and geolocation ads in Toronto!", author: "Chris Williams - Boat Seller, Toronto" },
+    { text: "Buraleh & Co’s targeted ads brought in the right buyers for my 2021 Boston Whaler 270 Vantage, and I saved on marketing costs in Toronto.", author: "Jessica Taylor - Boat Owner, Toronto" },
+    { text: "Selling my 2019 Sunseeker Predator 55 was a breeze with Buraleh & Co. We saw more interest and quicker offers in Vancouver.", author: "David Carter - Boat Seller, Vancouver" },
+    { text: "Thanks to Buraleh & Co’s targeted marketing, my 2020 Regal 33 SAV sold much faster in Toronto. Highly recommend!", author: "Olivia Harris - Boat Owner, Toronto" },
+    { text: "I got way more traffic for my 2021 Chaparral 267 SSX than ever before, all thanks to their SEO-optimized ads in Vancouver.", author: "Matthew Robinson - Boat Seller, Vancouver" },
+    { text: "Buraleh & Co helped me sell my 2018 Grady-White Freedom 275 in Los Angeles much faster than I expected. Amazing results!", author: "Michael Thompson - Boat Seller, Los Angeles" },
+    { text: "Buraleh & Co’s geolocation strategy helped me find buyers within my local area in Vancouver, and I sold my 2022 Monterey M225 in no time.", author: "Rachel Peterson - Boat Owner, Vancouver" },
+    { text: "Their targeted ads helped me reach exactly the right buyers, and I sold my 2019 Sea Ray 230 SPX fast in Toronto.", author: "Will Turner - Boat Seller, Toronto" },
+    { text: "I couldn’t believe how quickly I found a buyer for my 2020 Jeanneau NC 1095 after working with Buraleh & Co in Toronto. Excellent service!", author: "Samantha Brooks - Boat Owner, Toronto" },
+    { text: "Buraleh & Co’s expertise in reaching targeted buyers really worked for me in Vancouver. My 2021 Cobalt R30 sold quickly.", author: "Emily Jenkins - Boat Seller, Vancouver" },
+    { text: "I sold my 2022 Malibu Wakesetter 23 LSV within a week of using Buraleh & Co’s service in New York. The leads were high-quality and right on target.", author: "Charlie King - Boat Owner, New York" },
+    { text: "Buraleh & Co helped me sell my 2020 Azimut Atlantis 43 faster than I ever expected in Miami. I’m so glad I chose their service!", author: "Evelyn Martinez - Boat Seller, Miami" },
+    { text: "From the ad creation to the sale, Buraleh & Co made everything smooth. I’m happy with the result for my 2019 Beneteau Gran Turismo 50 in New York.", author: "Ben Lewis - Boat Seller, New York" },
+    { text: "The SEO expertise they provided really helped my 2021 Pursuit S 408 listings stand out in Miami. More views and quicker offers!", author: "George Evans - Boat Owner, Miami" },
+    { text: "Thanks to Buraleh & Co, I sold my 2018 Fountain 38 TE in Los Angeles much faster than I anticipated, all while saving on ad costs!", author: "Amanda Scott - Boat Seller, Los Angeles" }
 ];
 
-// Car Makes Data (log URLs for 15 car makes)
-const carMakesData = [
-    { logoUrl: 'https://www.carlogos.org/car-logos/tesla-logo-2007.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/ford-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/chevrolet-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/honda-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/toyota-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/infiniti-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/bmw-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/mercedes-benz-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/land-rover-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/jaguar-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/audi-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/volkswagen-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/jeep-logo.png' },
-    { logoUrl: 'https://www.carlogos.org/car-logos/lincoln-logo.png' }
-];
 
+// Boat Makes Data (replace with real boat logo PNG URLs)
+const boatMakesData = [
+    { logoUrl: 'https://ruyachts.com/images/westport/shipyard/logo/logo.png' },  // Replace with actual boat logo URLs
+    { logoUrl: 'https://example.com/boat-logos/boat2.png' },
+    { logoUrl: 'https://example.com/boat-logos/boat3.png' },
+    { logoUrl: 'https://example.com/boat-logos/boat4.png' },
+    { logoUrl: 'https://example.com/boat-logos/boat5.png' },
+    { logoUrl: 'https://example.com/boat-logos/boat6.png' },
+    { logoUrl: 'https://example.com/boat-logos/boat7.png' },
+    { logoUrl: 'https://example.com/boat-logos/boat8.png' },
+    { logoUrl: 'https://example.com/boat-logos/boat9.png' },
+    { logoUrl: 'https://example.com/boat-logos/boat10.png' },
+    { logoUrl: 'https://example.com/boat-logos/boat11.png' },
+    { logoUrl: 'https://example.com/boat-logos/boat12.png' },
+    { logoUrl: 'https://example.com/boat-logos/boat13.png' },
+    { logoUrl: 'https://example.com/boat-logos/boat14.png' },
+    { logoUrl: 'https://example.com/boat-logos/boat15.png' }
+];
 // Cities Data (5 major cities)
 const citiesData = [
     "Toronto", "New York", "Vancouver", "Miami", "Los Angeles"
