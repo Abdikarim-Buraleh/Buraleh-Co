@@ -121,6 +121,37 @@ function addCityHoverEffect() {
     });
 }
 
+// JavaScript for interactive yacht rotation
+const yacht = document.getElementById('yacht');
+let isDragging = false;
+let startX, startY, angleX = 0, angleY = 0;
+
+yacht.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    yacht.style.cursor = 'grabbing';
+});
+
+window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - startX;
+    const deltaY = e.clientY - startY;
+
+    angleX += deltaX * 0.5;
+    angleY -= deltaY * 0.5;
+
+    yacht.style.transform = `rotateX(${angleY}deg) rotateY(${angleX}deg)`;
+
+    startX = e.clientX;
+    startY = e.clientY;
+});
+
+window.addEventListener('mouseup', () => {
+    isDragging = false;
+    yacht.style.cursor = 'grab';
+});
+
 // Initialize everything after the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Load testimonials and car makes dynamically
