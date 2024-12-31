@@ -1,21 +1,19 @@
-// Testimonial Data (15 entries with real car dealerships in Toronto, New York, Vancouver, Miami, and Los Angeles)
-// Testimonial Data (15 entries with specific boat model sales in Toronto, New York, Vancouver, Miami, and Los Angeles)
 const testimonialsData = [
-    { text: "We sold our 2022 Sea Ray SLX 400 30% faster thanks to Buraleh & Co's targeted marketing and geolocation ads in Toronto!", author: "Chris Williams - Boat Seller, Toronto" },
-    { text: "Buraleh & Co’s targeted ads brought in the right buyers for my 2021 Boston Whaler 270 Vantage, and I saved on marketing costs in Toronto.", author: "Jessica Taylor - Boat Owner, Toronto" },
-    { text: "Selling my 2019 Sunseeker Predator 55 was a breeze with Buraleh & Co. We saw more interest and quicker offers in Vancouver.", author: "David Carter - Boat Seller, Vancouver" },
-    { text: "Thanks to Buraleh & Co’s targeted marketing, my 2020 Regal 33 SAV sold much faster in Toronto. Highly recommend!", author: "Olivia Harris - Boat Owner, Toronto" },
-    { text: "I got way more traffic for my 2021 Chaparral 267 SSX than ever before, all thanks to their SEO-optimized ads in Vancouver.", author: "Matthew Robinson - Boat Seller, Vancouver" },
-    { text: "Buraleh & Co helped me sell my 2018 Grady-White Freedom 275 in Los Angeles much faster than I expected. Amazing results!", author: "Michael Thompson - Boat Seller, Los Angeles" },
-    { text: "Buraleh & Co’s geolocation strategy helped me find buyers within my local area in Vancouver, and I sold my 2022 Monterey M225 in no time.", author: "Rachel Peterson - Boat Owner, Vancouver" },
-    { text: "Their targeted ads helped me reach exactly the right buyers, and I sold my 2019 Sea Ray 230 SPX fast in Toronto.", author: "Will Turner - Boat Seller, Toronto" },
-    { text: "I couldn’t believe how quickly I found a buyer for my 2020 Jeanneau NC 1095 after working with Buraleh & Co in Toronto. Excellent service!", author: "Samantha Brooks - Boat Owner, Toronto" },
-    { text: "Buraleh & Co’s expertise in reaching targeted buyers really worked for me in Vancouver. My 2021 Cobalt R30 sold quickly.", author: "Emily Jenkins - Boat Seller, Vancouver" },
-    { text: "I sold my 2022 Malibu Wakesetter 23 LSV within a week of using Buraleh & Co’s service in New York. The leads were high-quality and right on target.", author: "Charlie King - Boat Owner, New York" },
-    { text: "Buraleh & Co helped me sell my 2020 Azimut Atlantis 43 faster than I ever expected in Miami. I’m so glad I chose their service!", author: "Evelyn Martinez - Boat Seller, Miami" },
-    { text: "From the ad creation to the sale, Buraleh & Co made everything smooth. I’m happy with the result for my 2019 Beneteau Gran Turismo 50 in New York.", author: "Ben Lewis - Boat Seller, New York" },
-    { text: "The SEO expertise they provided really helped my 2021 Pursuit S 408 listings stand out in Miami. More views and quicker offers!", author: "George Evans - Boat Owner, Miami" },
-    { text: "Thanks to Buraleh & Co, I sold my 2018 Fountain 38 TE in Los Angeles much faster than I anticipated, all while saving on ad costs!", author: "Amanda Scott - Boat Seller, Los Angeles" }
+    { text: "We attracted new patients 30% faster thanks to Buraleh & Co's targeted marketing and geolocation ads in Toronto!", author: "Dr. Chris Williams - Dentist, Toronto" },
+    { text: "Buraleh & Co’s targeted ads brought in the right patients for my dental practice in Toronto, and I saved on marketing costs.", author: "Dr. Jessica Taylor - Dentist, Toronto" },
+    { text: "Thanks to Buraleh & Co’s services, my dental practice in Vancouver saw more patient inquiries and appointments in no time.", author: "Dr. David Carter - Dentist, Vancouver" },
+    { text: "Buraleh & Co’s targeted marketing helped my dental office in Toronto fill up its schedule much faster. Highly recommend!", author: "Dr. Olivia Harris - Dentist, Toronto" },
+    { text: "I got way more patient inquiries for my dental clinic in Vancouver than ever before, thanks to their SEO-optimized ads.", author: "Dr. Matthew Robinson - Dentist, Vancouver" },
+    { text: "Buraleh & Co helped my dental office in Los Angeles attract more local patients in a short amount of time. Fantastic results!", author: "Dr. Michael Thompson - Dentist, Los Angeles" },
+    { text: "Buraleh & Co’s geolocation strategy helped me reach local patients in Vancouver, and I saw a significant boost in new appointments.", author: "Dr. Rachel Peterson - Dentist, Vancouver" },
+    { text: "Their targeted ads helped me reach exactly the right patients, and my dental clinic in Toronto saw an increase in new clients fast.", author: "Dr. Will Turner - Dentist, Toronto" },
+    { text: "I couldn’t believe how quickly I attracted new patients to my dental practice in Toronto after working with Buraleh & Co. Excellent service!", author: "Dr. Samantha Brooks - Dentist, Toronto" },
+    { text: "Buraleh & Co’s expertise in reaching targeted patients worked wonders for me in Vancouver. My dental practice grew quickly.", author: "Dr. Emily Jenkins - Dentist, Vancouver" },
+    { text: "I filled my dental office schedule within a week of using Buraleh & Co’s service in Montreal. The leads were perfect and right on target.", author: "Dr. Charlie King - Dentist, Montreal" },
+    { text: "Buraleh & Co helped my dental clinic in Miami grow faster than I expected. Their service truly brought in high-quality leads!", author: "Dr. Evelyn Martinez - Dentist, Miami" },
+    { text: "From the ad creation to getting new patients, Buraleh & Co made everything smooth. I’m happy with the result for my dental practice in New York.", author: "Dr. Ben Lewis - Dentist, New York" },
+    { text: "The SEO expertise they provided helped my dental office listings stand out in Miami. More visibility and quicker appointment bookings!", author: "Dr. George Evans - Dentist, Miami" },
+    { text: "Thanks to Buraleh & Co, I attracted more patients to my dental clinic in Los Angeles than I expected, all while reducing my ad costs.", author: "Dr. Amanda Scott - Dentist, Los Angeles" }
 ];
 
 
