@@ -286,15 +286,20 @@ nav ul li a:hover {
     transition: transform 0.3s ease; /* Smooth transform transition */
 }
 
+.section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease; /* Ensure the text scale is smooth */
+}
+
 .city h3 {
     font-size: 1.25rem;
-    color: var(--primary-color);
+    color: var(--bg-dark);
     transition: transform 0.3s ease; /* Ensure the text scale is smooth */
 }
 
 /* Hover effect for city names */
 .city:hover {
-    transform: scale(1.1); /* Pop effect */
     box-shadow: 0 6px 10px var(--shadow-dark); /* Optional shadow on hover for a more popping effect */
 }
 
@@ -352,7 +357,7 @@ form button:hover {
 }
 
 
-/* Footer */ footer { background: var(--cta-bg); padding: 50px 20px; text-align: center; color: #fff; } footer .socials { margin-top: 20px; display: flex; justify-content: center; gap: 20px; } footer .socials a { transition: transform 0.3s ease, opacity 0.3s ease; display: inline-block; } footer .socials img { width: 40px; height: 40px; object-fit: contain; transition: transform 0.3s ease; } footer .socials a:hover img { transform: scale(1.1); opacity: 0.8; } footer .footer-content { margin-top: 30px; font-size: 0.875rem; color: rgba(255, 255, 255, 0.7); display: flex; flex-direction: column; align-items: center; } footer .footer-content p { margin: 10px 0; } footer .footer-content a { color: var(--highlight-color); text-decoration: none; font-weight: 600; transition: color 0.3s ease; } footer .footer-content a:hover { color: var(--primary-color); } /* Footer Links Styling */ .footer-links { margin-top: 20px; font-size: 14px; color: #fff; text-align: center; } .footer-links a { color: #fff; text-decoration: none; font-weight: bold; margin: 0 10px; } .footer-links a:hover { color: var(--primary-color); /* Change this to your website's primary color */ }
+/* Footer */ footer { background: var(--cta-bg); padding: 50px 20px; text-align: center; color: #fff; } footer .socials { margin-top: 20px; display: flex; justify-content: center; gap: 20px; } footer .socials a { transition: transform 0.3s ease, opacity 0.3s ease; display: inline-block; } footer .socials img { width: 40px; height: 40px; object-fit: contain; transition: transform 0.3s ease; } footer .socials a:hover img { transform: scale(1.1); opacity: 0.8; } footer .footer-content { margin-top: 30px; font-size: 0.875rem; color: rgba(255, 255, 255, 0.7); display: flex; flex-direction: column; align-items: center; } footer .footer-content p { margin: 10px 0; } footer .footer-content a { color: var(--primary-color); text-decoration: none; font-weight: 600; transition: color 0.3s ease; } footer .footer-content a:hover { color: var(--highlight-color); } /* Footer Links Styling */ .footer-links { margin-top: 20px; font-size: 14px; color: var(--primary-color); text-align: center; } .footer-links a { color: #fff; text-decoration: none; font-weight: bold; margin: 0 10px; } .footer-links a:hover { color: var(--primary-color); /* Change this to your website's primary color */ }
 
 /* Mobile Adjustments */
 @media screen and (max-width: 768px) {
