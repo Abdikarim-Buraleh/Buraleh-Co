@@ -24,6 +24,7 @@ body {
     --cta-bg: linear-gradient(135deg, #9b59b6, #8e44ad); /* Gradient for CTA */
     --shadow-light: rgba(0, 0, 0, 0.1);
     --shadow-dark: rgba(0, 0, 0, 0.25);
+    --text-primary: #333;
 }
 
 /* Header */
@@ -64,77 +65,22 @@ nav ul li a:hover {
     color: transparent; /* Makes the text itself transparent so the gradient is visible */
 }
 
-/* Hero Section */
-.hero {
-    background: url('car-hero.jpg') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    position: relative;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-}
-
-.cta-btn {
-    padding: 15px 30px;
+/* Wallpaper Section (for Premium Dental Marketing Introduction) */
+#wallpaper-section {
     background: var(--cta-bg);
     color: #fff;
-    font-size: 1.25rem;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.cta-btn:hover {
-    background: var(--secondary-color);
-    transform: translateY(-5px);
-}
-
-
-/* Styling for the yacht container */
-#yacht-container {
-    position: relative;
-    width: 100%;
-    height: 500px; /* You can adjust the height as needed */
-    overflow: hidden; /* Ensures that no overflow outside the container is visible */
-}
-
-/* Styling for the yacht image */
-#yacht {
-    width: 100%;
-    height: auto;
-    display: block; /* Removes any margin/padding around the image */
-    object-fit: cover; /* Ensures the image covers the entire width without stretching */
-}
-
-/* Controls text styling */
-.controls {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+    padding: 80px 20px;
     text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: adds a background for better readability */
-    padding: 10px 20px;
 }
 
+#wallpaper-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+#wallpaper-section p {
+    font-size: 1.25rem;
+}
 
 /* About Section */
 #about {
@@ -142,6 +88,42 @@ nav ul li a:hover {
     color: #fff;
     padding: 60px 30px;
     text-align: center;
+}
+
+/* Testimonials Carousel */
+.testimonials-carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.testimonials-slider {
+    display: flex;
+    transition: transform 4s ease-in-out;
+}
+
+.testimonial {
+    min-width: 300px;
+    margin-right: 20px;
+    text-align: center;
+    flex-shrink: 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    border: 5px solid transparent;
+    border-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) 1;
+}
+
+.testimonial p {
+    font-size: 1rem;
+    color: var(--bg-dark);
+    margin-bottom: 10px;
+}
+
+.testimonial h3 {
+    font-size: 0.875rem;
+    color: #777;
 }
 
 /* General Section Styling */
@@ -155,7 +137,7 @@ nav ul li a:hover {
 
 /* Geolocation Section */
 #geolocation {
-    position: relative; /* Make the section the reference point for the absolute positioning */
+    position: relative;
     background: var(--cta-bg);
     color: #fff;
     padding: 60px 20px;
@@ -164,7 +146,7 @@ nav ul li a:hover {
 
 /* Pricing Section Styles */
 #pricing {
-    background-color: #fff;
+    background-color: #fff; /* Ensures the background is white */
     padding: 60px 20px;
     text-align: center;
     box-shadow: 0 4px 6px var(--shadow-light);
@@ -194,12 +176,13 @@ nav ul li a:hover {
 
 /* Individual Plan Styling */
 .pricing-plan {
-    background: #fff;
+    background: #fff; /* Ensures each plan's background is white */
     border-radius: 10px;
     padding: 30px;
-    box-shadow: 0 4px 6px var(--shadow-light);
+    box-shadow: 0 4px 6px var(--primary-color);
     width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--primary-color);
 }
 
 .pricing-plan:hover {
@@ -267,106 +250,17 @@ nav ul li a:hover {
     }
 }
 
-#carList {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
+/* Contact Section Title and Text Styling */
+#contact h1 {
+    color: var(--primary-color); /* Purple color for the Contact Us title */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-.car-list .car {
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 6px var(--shadow-light);
-    transition: transform 0.3s ease;
-}
-
-.car-list .car:hover {
-    transform: translateY(-10px) scale(1.05);
-}
-
-.car-list .car h3 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.car-list .car p {
-    font-size: 1rem;
-    color: var(--bg-dark);
-}
-
-.car-list .car .price {
+#contact p {
+    color: var(--primary-color); /* Purple color for the text below the title */
     font-size: 1.25rem;
-    color: var(--highlight-color);
-}
-
-/* Testimonials Carousel */
-.testimonials-carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.testimonials-slider {
-    display: flex;
-    transition: transform 4s ease-in-out;
-}
-
-.testimonial {
-    min-width: 300px;
-    margin-right: 20px;
-    text-align: center;
-    flex-shrink: 0;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px var(--shadow-light);
-    border: 5px solid transparent;
-    border-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) 1;
-}
-
-.testimonial p {
-    font-size: 1rem;
-    color: var(--bg-dark);
-    margin-bottom: 10px;
-}
-
-.testimonial h3 {
-    font-size: 0.875rem;
-    color: #777;
-}
-
-/* Car Makes Sold Carousel */
-.car-makes-carousel-container {
-    position: center;
-    width: 100%;
-    overflow: hidden;
-    margin-top: 40px;
-}
-
-.car-makes-slider {
-    display: flex;
-    transition: transform 4s ease-in-out;
-}
-
-.car-make-logo {
-    min-width: 170px;
-    margin-right: 20px;
-    text-align: center;
-    flex-shrink: 0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px var(--shadow-light);
-    border: 5px solid transparent;
-    border-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) 1;
-}
-
-.car-make-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    margin-bottom: 40px;
 }
 
 /* Cities Carousel */
@@ -416,6 +310,17 @@ form {
     margin: 0 auto;
 }
 
+form h1, form h2 {
+    color: var(--primary-color); /* Color for the form title (if you use it) */
+    margin-bottom: 20px;
+}
+
+form label {
+    color: var(--primary-color);  /* Controls the label text color */
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+}
+
 form input,
 form textarea {
     padding: 10px;
@@ -446,98 +351,8 @@ form button:hover {
     transform: translateY(-5px);
 }
 
-/* Footer */
-footer {
-    background: var(--cta-bg);
-    padding: 50px 20px;
-    text-align: center;
-    color: #fff;
-}
 
-footer .socials {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-footer .socials a {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    display: inline-block;
-}
-
-footer .socials img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-footer .socials a:hover img {
-    transform: scale(1.1);
-    opacity: 0.8;
-}
-
-footer .footer-content {
-    margin-top: 30px;
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-footer .footer-content p {
-    margin: 10px 0;
-}
-
-footer .footer-content a {
-    color: var(--highlight-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-footer .footer-content a:hover {
-    color: var(--primary-color);
-}
-
-/* Footer Links Styling */
-.footer-links {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #fff;
-}
-
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 10px;
-}
-
-.footer-links a:hover {
-    color: var(--primary-color);  /* Change this to your website's primary color */
-}
-
-/* Yacht Container Styling */
-#yacht-container {
-    width: 100%;
-    height: 100vh;
-    background-color: #f5f5f5;
-    position: relative;
-}
-
-#yacht {
-    width: 60%;
-    height: auto;
-    margin: 0 auto;
-    cursor: grab;
-}
-
-.controls {
-    text-align: center;
-    padding: 20px;
-    background-color: #8e44ad;
-    color: white;
-}
+/* Footer */ footer { background: var(--cta-bg); padding: 50px 20px; text-align: center; color: #fff; } footer .socials { margin-top: 20px; display: flex; justify-content: center; gap: 20px; } footer .socials a { transition: transform 0.3s ease, opacity 0.3s ease; display: inline-block; } footer .socials img { width: 40px; height: 40px; object-fit: contain; transition: transform 0.3s ease; } footer .socials a:hover img { transform: scale(1.1); opacity: 0.8; } footer .footer-content { margin-top: 30px; font-size: 0.875rem; color: rgba(255, 255, 255, 0.7); display: flex; flex-direction: column; align-items: center; } footer .footer-content p { margin: 10px 0; } footer .footer-content a { color: var(--highlight-color); text-decoration: none; font-weight: 600; transition: color 0.3s ease; } footer .footer-content a:hover { color: var(--primary-color); } /* Footer Links Styling */ .footer-links { margin-top: 20px; font-size: 14px; color: #fff; text-align: center; } .footer-links a { color: #fff; text-decoration: none; font-weight: bold; margin: 0 10px; } .footer-links a:hover { color: var(--primary-color); /* Change this to your website's primary color */ }
 
 /* Mobile Adjustments */
 @media screen and (max-width: 768px) {
