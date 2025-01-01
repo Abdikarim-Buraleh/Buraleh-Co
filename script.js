@@ -1,3 +1,18 @@
+// Load Dynamic Content function
+function loadDynamicContent(data, containerClass, itemClass, contentFn) {
+    const container = document.querySelector(containerClass);
+    if (container) {
+        container.innerHTML = ''; // Clear existing content
+        data.forEach(item => {
+            const element = document.createElement('div');
+            element.classList.add(itemClass);
+            element.innerHTML = contentFn(item);
+            container.appendChild(element);
+        });
+    }
+}
+
+// Testimonials Data
 const testimonialsData = [
     { text: "We attracted new patients 30% faster thanks to Buraleh & Co's targeted marketing and geolocation ads in Toronto!", author: "Dr. Chris Williams - Dentist, Toronto" },
     { text: "Buraleh & Co’s targeted ads brought in the right patients for my dental practice in Toronto, and I saved on marketing costs.", author: "Dr. Jessica Taylor - Dentist, Toronto" },
@@ -16,47 +31,10 @@ const testimonialsData = [
     { text: "Thanks to Buraleh & Co, I attracted more patients to my dental clinic in Los Angeles than I expected, all while reducing my ad costs.", author: "Dr. Amanda Scott - Dentist, Los Angeles" }
 ];
 
-
-// Boat Makes Data (replace with real boat logo PNG URLs)
-const boatMakesData = [
-    { logoUrl: 'https://ruyachts.com/images/westport/shipyard/logo/logo.png' },  // Replace with actual boat logo URLs
-    { logoUrl: 'https://example.com/boat-logos/boat2.png' },
-    { logoUrl: 'https://example.com/boat-logos/boat3.png' },
-    { logoUrl: 'https://example.com/boat-logos/boat4.png' },
-    { logoUrl: 'https://example.com/boat-logos/boat5.png' },
-    { logoUrl: 'https://example.com/boat-logos/boat6.png' },
-    { logoUrl: 'https://example.com/boat-logos/boat7.png' },
-    { logoUrl: 'https://example.com/boat-logos/boat8.png' },
-    { logoUrl: 'https://example.com/boat-logos/boat9.png' },
-    { logoUrl: 'https://example.com/boat-logos/boat10.png' },
-    { logoUrl: 'https://example.com/boat-logos/boat11.png' },
-    { logoUrl: 'https://example.com/boat-logos/boat12.png' },
-    { logoUrl: 'https://example.com/boat-logos/boat13.png' },
-    { logoUrl: 'https://example.com/boat-logos/boat14.png' },
-    { logoUrl: 'https://example.com/boat-logos/boat15.png' }
-];
-// Cities Data (5 major cities)
-const citiesData = [
-    "Toronto", "New York", "Vancouver", "Miami", "Los Angeles"
-];
-
-// Common function to load dynamic content (testimonials, car makes, or cities)
-function loadDynamicContent(data, containerClass, itemClass, contentFn) {
-    const container = document.querySelector(containerClass);
-    if (container) {
-        container.innerHTML = ''; // Clear existing content
-        data.forEach(item => {
-            const element = document.createElement('div');
-            element.classList.add(itemClass);
-            element.innerHTML = contentFn(item);
-            container.appendChild(element);
-        });
-    }
-}
-
-// Testimonials slide logic
+// Current Testimonial Index
 let currentTestimonialIndex = 0;
 
+// Slide Testimonials function
 function slideTestimonials() {
     const testimonialsSlider = document.querySelector('.testimonials-slider');
     if (!testimonialsSlider) return;
@@ -67,113 +45,14 @@ function slideTestimonials() {
     testimonialsSlider.style.transform = `translateX(-${currentTestimonialIndex * itemWidth}px)`;
 }
 
-// Car makes slide logic
-let currentCarMakeIndex = 0;
-
-function slideCarMakes() {
-    const carMakesSlider = document.querySelector('.car-makes-slider');
-    if (!carMakesSlider) return;
-
-    const totalCarMakes = carMakesData.length;
-    currentCarMakeIndex = (currentCarMakeIndex + 1) % totalCarMakes;
-    const itemWidth = document.querySelector('.car-make-logo')?.offsetWidth || 170; // Default to 170px
-    carMakesSlider.style.transition = 'transform 4s ease-in-out';
-    carMakesSlider.style.transform = `translateX(-${currentCarMakeIndex * itemWidth}px)`;
-}
-
-// Carousel intervals
-let carouselIntervals = {
-    testimonials: setInterval(slideTestimonials, 4000),
-    carMakes: setInterval(slideCarMakes, 4000)
-};
-
-// Hover event listeners to pause and resume carousels
-function addCarouselHoverListeners(containerClass, intervalType) {
-    const container = document.querySelector(containerClass);
-    if (container) {
-        container.addEventListener('mouseover', () => {
-            clearInterval(carouselIntervals[intervalType]);
-        });
-        container.addEventListener('mouseout', () => {
-            if (intervalType === 'testimonials') {
-                carouselIntervals.testimonials = setInterval(slideTestimonials, 4000);
-            } else if (intervalType === 'carMakes') {
-                carouselIntervals.carMakes = setInterval(slideCarMakes, 4000);
-            }
-        });
-    }
-}
-
-// Hover effect for cities
-function addCityHoverEffect() {
-    const cities = document.querySelectorAll('.city');
-    cities.forEach(city => {
-        city.addEventListener('mouseover', () => {
-            // Add pop effect on hover
-            city.style.transform = 'scale(1.1)';
-            city.style.transition = 'transform 0.3s ease';
-        });
-
-        city.addEventListener('mouseout', () => {
-            // Reset the pop effect when hover is removed
-            city.style.transform = 'scale(1)';
-        });
-    });
-}
-
-// JavaScript for interactive yacht rotation
-const yacht = document.getElementById('yacht');
-let isDragging = false;
-let startX, startY, angleX = 0, angleY = 0;
-
-yacht.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startX = e.clientX;
-    startY = e.clientY;
-    yacht.style.cursor = 'grabbing';
-});
-
-window.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    const deltaX = e.clientX - startX;
-    const deltaY = e.clientY - startY;
-
-    angleX += deltaX * 0.5;
-    angleY -= deltaY * 0.5;
-
-    yacht.style.transform = `rotateX(${angleY}deg) rotateY(${angleX}deg)`;
-
-    startX = e.clientX;
-    startY = e.clientY;
-});
-
-window.addEventListener('mouseup', () => {
-    isDragging = false;
-    yacht.style.cursor = 'grab';
-});
-
-// Initialize everything after the DOM is loaded
+// Document Ready
 document.addEventListener('DOMContentLoaded', () => {
-    // Load testimonials and car makes dynamically
     loadDynamicContent(testimonialsData, '.testimonials-slider', 'testimonial', item => `
         <p>"${item.text}"</p>
         <h3>${item.author}</h3>
     `);
-    loadDynamicContent(carMakesData, '.car-makes-slider', 'car-make-logo', item => `
-        <img src="${item.logoUrl}" alt="Car Make">
-    `);
-    loadDynamicContent(citiesData, '.cities-slider', 'city', city => `
-        <h3>${city}</h3>
-    `);
 
-    // Add hover effect for cities
-    addCityHoverEffect();
-
-    // Initialize the other sliders
+    // Initialize the slider
     slideTestimonials();
-    slideCarMakes();
-
-    // Add hover listeners for testimonials and car makes
-    addCarouselHoverListeners('.testimonials-carousel-container', 'testimonials');
-    addCarouselHoverListeners('.car-makes-carousel-container', 'carMakes');
+    setInterval(slideTestimonials, 4000);
 });
