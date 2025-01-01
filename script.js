@@ -19,16 +19,14 @@ const testimonialsData = [
     { text: "Thanks to Buraleh & Co’s services, my dental practice in Vancouver saw more patient inquiries and appointments in no time.", author: "Dr. David Carter - Dentist, Vancouver" },
     { text: "Buraleh & Co’s targeted marketing helped my dental office in Toronto fill up its schedule much faster. Highly recommend!", author: "Dr. Olivia Harris - Dentist, Toronto" },
     { text: "I got way more patient inquiries for my dental clinic in Vancouver than ever before, thanks to their SEO-optimized ads.", author: "Dr. Matthew Robinson - Dentist, Vancouver" },
-    { text: "Buraleh & Co helped my dental office in Los Angeles attract more local patients in a short amount of time. Fantastic results!", author: "Dr. Michael Thompson - Dentist, Los Angeles" },
     { text: "Buraleh & Co’s geolocation strategy helped me reach local patients in Vancouver, and I saw a significant boost in new appointments.", author: "Dr. Rachel Peterson - Dentist, Vancouver" },
-    { text: "Their targeted ads helped me reach exactly the right patients, and my dental clinic in Toronto saw an increase in new clients fast.", author: "Dr. Will Turner - Dentist, Toronto" },
-    { text: "I couldn’t believe how quickly I attracted new patients to my dental practice in Toronto after working with Buraleh & Co. Excellent service!", author: "Dr. Samantha Brooks - Dentist, Toronto" },
-    { text: "Buraleh & Co’s expertise in reaching targeted patients worked wonders for me in Vancouver. My dental practice grew quickly.", author: "Dr. Emily Jenkins - Dentist, Vancouver" },
     { text: "I filled my dental office schedule within a week of using Buraleh & Co’s service in Montreal. The leads were perfect and right on target.", author: "Dr. Charlie King - Dentist, Montreal" },
-    { text: "Buraleh & Co helped my dental clinic in Miami grow faster than I expected. Their service truly brought in high-quality leads!", author: "Dr. Evelyn Martinez - Dentist, Miami" },
-    { text: "From the ad creation to getting new patients, Buraleh & Co made everything smooth. I’m happy with the result for my dental practice in New York.", author: "Dr. Ben Lewis - Dentist, New York" },
-    { text: "The SEO expertise they provided helped my dental office listings stand out in Miami. More visibility and quicker appointment bookings!", author: "Dr. George Evans - Dentist, Miami" },
-    { text: "Thanks to Buraleh & Co, I attracted more patients to my dental clinic in Los Angeles than I expected, all while reducing my ad costs.", author: "Dr. Amanda Scott - Dentist, Los Angeles" }
+    { text: "Buraleh & Co’s geolocation ads brought more patients to my dental practice in Ottawa, increasing inquiries and appointments quickly.", author: "Dr. Sarah Anderson - Dentist, Ottawa" },
+    { text: "I saw a noticeable increase in patient traffic to my clinic in Calgary thanks to their tailored marketing strategies.", author: "Dr. Brian Walker - Dentist, Calgary" },
+    { text: "Buraleh & Co's targeted ads helped my dental office in Edmonton attract exactly the patients we needed.", author: "Dr. Lauren Turner - Dentist, Edmonton" },
+    { text: "With Buraleh & Co, my dental practice in Calgary saw remarkable growth in just a short time.", author: "Dr. Mark Wilson - Dentist, Calgary" },
+    { text: "Buraleh & Co’s SEO and geolocation strategies boosted my dental practice's visibility in Edmonton, leading to more appointments.", author: "Dr. Susan Davis - Dentist, Edmonton" },
+    { text: "Thanks to Buraleh & Co, my dental practice in Vancouver experienced a steady influx of new patients.", author: "Dr. Emily Jenkins - Dentist, Vancouver" }
 ];
 
 // Current Testimonial Index
